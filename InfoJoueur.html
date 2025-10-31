@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="jeu.css">
+    <title>Information sur le joueur</title>
+    <style>
+      .card-header
+        {
+            border-bottom: 1px solid black;
+        }
+
+        input{
+            margin: 4px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+        <h5 class="card-header">Information sur le joueur</h5>
+        <div class="card-body">
+          <form action="jeu.php" method="post">
+            <label for="nom">Nom :</label>
+            <input type="text" id="nom" name="nom" required><br><br>
+
+            <label for="prenom">Prénom :</label>
+            <input type="text" id="prenom" name="prenom" required><br><br>
+
+            <label>Sexe :</label>
+            <input type="radio" id="homme" name="sexe" value="homme" required>H
+            <input type="radio" id="femme" name="sexe" value="femme" required>F<br>
+            
+                <button type="submit" onclick="recupererInfos()">Suivant
+                <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            
+          </form>
+        </div>
+      </div>
+  </div>
+      <script src="jeu.js"></script>
+</body>
+</html>
