@@ -2,6 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="jeu.css">
@@ -10,29 +11,43 @@
 <body>
     <div class="container">
     <div class="card">
-        <h5 class="card-header">Information sur la partie</h5>
+        <h5 class="card-header">
+            <i class="fa-solid fa-gamepad"></i> Information sur la partie
+        </h5>
         <div class="card-body">
           <form action="Partie.html" method="post">
-            <label for="difficulte"></label>
-            <select id="difficulte" name="difficulte">
-                <option value="Facile">Facile</option>
-                <option value="Moyen">Moyen</option>
-                <option value="Difficile">Difficile</option>
-            </select><br>
 
-            <label for="symbole">Symbole :</label>
-            <input type="radio" id="symbole1" name="symbole" value="X" required>X
-            <input type="radio" id="symbole2" name="symbole" value="O" required>O<br>
-            
-                <button type="submit" onclick="traiterFormulaire()">Commencer
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-            
+            <div class="form-group">
+                <label for="difficulte"><i class="fa-solid fa-gauge-high fa-sm"></i> Difficulté</label>
+                <select id="difficulte" name="difficulte">
+                    <option value="Facile">Facile (3×3)</option>
+                    <option value="Moyen">Moyen (4×4)</option>
+                    <option value="Difficile">Difficile (5×5)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fa-solid fa-xmark fa-sm"></i> Votre symbole</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" id="symbole1" name="symbole" value="X" required>
+                        <span style="color:#ef4444; font-weight:900;">X</span>
+                    </label>
+                    <label class="radio-option">
+                        <input type="radio" id="symbole2" name="symbole" value="O" required>
+                        <span style="color:#3b82f6; font-weight:900;">O</span>
+                    </label>
+                </div>
+            </div>
+
+            <button type="submit" onclick="traiterFormulaire()">
+                Commencer <i class="fa-solid fa-play"></i>
+            </button>
+
           </form>
         </div>
-      </div>
-      </div>
-
-      <script src="jeu.js"></script>
+    </div>
+    </div>
+    <script src="jeu.js"></script>
 </body>
 </html>
